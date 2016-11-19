@@ -1,0 +1,115 @@
+@import "../mixins.scss";
+
+.products {
+	@include clearfix;
+	text-align: left;
+	margin-top: 40px;
+}
+
+.products__featured-item {
+	@include container;
+	@include block_shadow;
+	position: relative;
+	padding-top: 48px;
+	padding-bottom: 40px;
+	background: url(../img/logo-ray-ban-red.jpg) no-repeat right 40px top 40px,
+							url(../img/featured-product.png) no-repeat right center,
+							linear-gradient(to bottom, #fff 0%, #f3f3f3 100%);
+	background-size: auto, auto 100%, auto;
+
+	&::after {
+		display: block;
+		position: absolute;
+		content: "never hide";
+		right: 40px;
+		bottom: 20px;
+		font-family: "Alternate Gothic", Arial, Sans-serif;
+		font-size: 72px;
+		line-height: 72px;
+		color: #fff;
+		text-transform: uppercase;
+		user-select: none; 
+		cursor: default;
+	}
+}
+
+.products__featured-item-name {
+	margin-top: 45px;
+	font-size: 21px;
+	line-height: 21px;
+	font-weight: 700;
+	color: #444444;
+}
+
+.products__featured-item-description {
+	max-width: 500px;
+	margin-top: 17px;
+}
+
+.products__featured-item .btn {
+	margin-top: 45px;
+}
+
+.products__item {
+	@include block_shadow;
+	@include block_gradient;
+	float: left;
+	width: 31%;
+	margin-right: 3.5%;
+	margin-top: 40px;
+
+	&:nth-child(3n) {
+		margin-right: 0;
+	}
+}
+
+.products__item-content-wrap {
+	padding: 0 30px 20px 30px;
+}
+
+.products__item-name {
+	margin-top: 16px;
+	font-size: 21px;
+	line-height: 21px;
+	font-weight: 700;
+}
+
+.products__item-color {
+	margin-top: 6px;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.products__item-size {
+	margin-top: 4px;
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: 700;
+}
+
+.products__item-size-change {
+	display: inline-block;
+	margin-left: 5px;
+	font-size: 10px;
+	font-weight: 600;
+	color: #65a0b8;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.products__item-foooter {
+	@include clearfix;
+	margin-top: 21px;
+}
+
+.products__item-price {
+	float: left;
+	font-size: 28px;
+	font-weight: 700;
+}
+
+.products__item-foooter .btn {
+	float: right;
+}

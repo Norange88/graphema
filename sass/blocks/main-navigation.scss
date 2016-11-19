@@ -1,0 +1,33 @@
+@import "../mixins.scss";
+
+.main-navigation {
+	float: left;
+	margin-left: 40px;
+	font-weight: 600;
+}
+
+.main-navigation__list-item {
+	display: inline-block;
+	text-align: left;
+	margin-left: 41px;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.main-navigation__link {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 12px;
+	height: 40px;
+	line-height: 40px;
+	text-transform: uppercase;
+
+	&:hover {
+		margin-right: -1px;
+		font-weight: 700;
+		color: #444444;
+		border-bottom: 3px solid #444444;
+	}
+}

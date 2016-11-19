@@ -1,0 +1,11 @@
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -160px;
+	border-top: 1px solid transparent;
+
+	&::after {
+		display: block;
+		content: "";
+		height: 160px;
+	}
+}

@@ -1,0 +1,25 @@
+/* Контейнер */
+@mixin container {
+	width: auto;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+/* Clearfix */
+@mixin clearfix {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+/* Тень у больших блоков */
+@mixin block_shadow {
+	box-shadow: 0 4px 4px 0 rgba(0,0,0, 0.2);
+}
+
+/* Белый фоновый градиент */
+@mixin block_gradient {
+	background: linear-gradient(to bottom, #fff 0%, #f3f3f3 100%);
+}

@@ -1,0 +1,37 @@
+.icon {
+	display: inline-block;
+	vertical-align: middle;
+	content: "";
+	margin-right: 20px;
+	font-size: 0;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.icon--tw {
+	width: 17px;
+	height: 14px;
+	background: url(../img/Twitter.png) no-repeat center;
+}
+
+.icon--fb {
+	width: 8px;
+	height: 17px;
+	background: url(../img/Facebook.png) no-repeat center;
+}
+
+.icon--vm {
+	width: 16px;
+	height: 15px;
+	background: url(../img/Vimeo.png) no-repeat center;
+}
+
+.icon--pt {
+	width: 13px;
+	height: 16px;
+	background: url(../img/Pinterest.png) no-repeat center;
+}
+
+
