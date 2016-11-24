@@ -111,54 +111,6 @@ class Cart {
 }
 
 
-// // Функционал корзины
-// function cart() {
-// 	var cart_total = 0;
-// 	var items;
-
-// 	// Рассчёт цены всех предметов в корзине
-// 	function count_total(items) {
-// 		items = document.querySelectorAll(".cart__item");
-// 		var old_total = cart_total;
-// 		cart_total = 0;
-// 		for(var i = 0; i<items.length; i++) {
-// 			var price = items[i].querySelector(".cart__item-price span").textContent;
-// 			var quantity = items[i].querySelector(".cart__items-count").value;
-// 			var item_total = price*quantity;
-// 			cart_total += item_total;
-// 		};
-// 	}
-	
-// 	// Установка выводимой цены
-// 	function set_total(total) {
-// 		document.querySelector(".cart__total-price span").textContent = total;
-// 	}
-
-// 	// Перерасчёт выводимой цены
-// 	function recount_cart() {
-// 		count_total(items);
-// 		set_total(cart_total);
-// 	}
-// 	recount_cart();
-
-// 	// Перерасчёт выводимой цены при изменении полей количества
-// 	var quantity_fields = document.querySelectorAll(".cart__items-count");
-// 	for (var i=0; i<quantity_fields.length; i++) {
-// 		quantity_fields[i].addEventListener("blur", recount_cart)
-// 	}
-
-// 	// Удаление из корзины по клику кнопки удаления
-// 	function remove_item() {
-// 		var item = this.closest(".cart__item");
-// 		item.remove();
-// 		recount_cart();
-// 	}
-
-// 	var remove_btns = document.querySelectorAll(".cart__item-remove");
-// 	for (var i=0; i<remove_btns.length; i++) {
-// 		remove_btns[i].addEventListener("click", remove_item);
-// 	}
-// };
 
 document.addEventListener('DOMContentLoaded', () => {
 	(new Cart).init();
