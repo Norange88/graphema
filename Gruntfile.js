@@ -37,12 +37,14 @@ module.exports = function(grunt) {
 			server: {
 				bsFiles: {
 					src: [
-						"build/*.html",
-						"build/css/*.css"
+						"*.html",
+						"css/*.css"
 					]
 				},
 				options: {
-					server: ".",
+					server: {
+						baseDir: "build/"
+					},
 					watchTask: true,
 					notify: false,
 					open: true,
@@ -53,7 +55,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			style: {
-				files: ["build/sass/**/*.{scss,sass}", "build/js/*.js"],
+				files: ["sass/**/*.{scss,sass}", "js/*.js"],
 				tasks: ["sass", "postcss", "babel", "uglify"],
 				options: {
 					spawn: false
@@ -104,7 +106,7 @@ module.exports = function(grunt) {
 		uglify: {
 			compress: {
 				files: {
-					"build/js/main.js": ["build/js/main.js"]
+					"build/js/main.min.js": ["build/js/main.js"]
 				}
 			}
 		},
@@ -144,7 +146,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask("serve", ["babel", "uglify", "browserSync", "watch"]);
+	grunt.registerTask("serve", ["browserSync", "watch", "babel", "uglify"]);
 	grunt.registerTask("symbols", ["svgmin", "svgstore"]);
 	grunt.registerTask("build", [
 		"clean",
