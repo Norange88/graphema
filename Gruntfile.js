@@ -37,8 +37,8 @@ module.exports = function(grunt) {
 			server: {
 				bsFiles: {
 					src: [
-						"*.html",
-						"css/*.css"
+						"build/*.html",
+						"build/css/*.css"
 					]
 				},
 				options: {
@@ -53,8 +53,8 @@ module.exports = function(grunt) {
 
 		watch: {
 			style: {
-				files: ["sass/**/*.{scss,sass}", "js/*.js"],
-				tasks: ["sass", "postcss", "babel"],
+				files: ["build/sass/**/*.{scss,sass}", "build/js/*.js"],
+				tasks: ["sass", "postcss", "babel", "uglify"],
 				options: {
 					spawn: false
 				}
@@ -68,8 +68,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'build/js/main-babel.js': 'js/main.js',
-					'build/js/cart-babel.js': 'js/cart.js'
+					'build/js/main.js': 'js/main.js'
 				}
 			}
 		},
@@ -105,8 +104,7 @@ module.exports = function(grunt) {
 		uglify: {
 			compress: {
 				files: {
-					"build/js/main-babel.min.js": ["build/js/main-babel.js"],
-					"build/js/cart-babel.min.js": ["build/js/cart-babel.js"]
+					"build/js/main.js": ["build/js/main.js"]
 				}
 			}
 		},
@@ -146,7 +144,7 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.registerTask("serve", ["babel", "browserSync", "watch"]);
+	grunt.registerTask("serve", ["babel", "uglify", "browserSync", "watch"]);
 	grunt.registerTask("symbols", ["svgmin", "svgstore"]);
 	grunt.registerTask("build", [
 		"clean",
@@ -156,6 +154,5 @@ module.exports = function(grunt) {
 		"csso",
 		"babel",
 		"uglify",
-//		"imagemin"
 	]);
 };
